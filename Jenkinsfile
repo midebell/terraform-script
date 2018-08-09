@@ -19,7 +19,7 @@ pipeline {
         }
         stage('tfsvars create'){
             steps {
-                sh 'sudo cp /home/ubuntu/terraform/* ./jenkins/'
+                sh 'cp /home/ubuntu/terraform/* ./jenkins/'
             }
         }
     }
