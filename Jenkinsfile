@@ -34,6 +34,7 @@ pipeline {
     // some block
                     sh 'AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} AWS_DEFAULT_REGION=us-east-1 ${AWS_BIN}'
                     sh 'sleep 1m' // SOOOO HACKY!!!
+                    sh 'terraform init /home/ubuntu/terraform/'
                   }           
                
             }
