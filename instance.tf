@@ -15,9 +15,8 @@ resource "aws_instance" "web" {
   }
 
   provisioner "local-exec" {
-     command = "echo ${aws_instance.web.private_ip} >> web_private_ips.txt"                                                                                                                                  xt"
-  }
-
+     command = "echo ${aws_instance.web.private_ip} >> web_private_ips.txt"    
+    }
   provisioner "file" {
     source = "script.sh"
     destination = "/tmp/script.sh"
