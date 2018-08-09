@@ -24,7 +24,7 @@ pipeline {
         }
         stage('terraform init') {
             steps {
-                sh '/home/ubuntu/terraform init /var/lib/jenkins/workspace/Terraform-aws/terraform-script/'
+                sh '/home/ubuntu/terraform/terraform init /var/lib/jenkins/workspace/Terraform-aws/terraform-script/'
             }
         }
     }
