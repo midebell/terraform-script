@@ -5,9 +5,6 @@ until [[ -f /var/lib/cloud/instance/boot-finished ]]; do
   sleep 1
 done
 
-# install nginx
-apt-get update
-apt-get -y install nginx
-
-# make sure nginx is started
-service nginx start
+# install packges
+sudo apt-get update
+sudo apt -y install python-minimal python-simplejson
