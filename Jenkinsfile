@@ -32,6 +32,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'access'), string(credentialsId: 'AWS_SECRET_KEY', variable: 'secret')]) {
     // some block
+                sh 'AWS_ACCESS_KEY_ID=${access} AWS_SECRET_ACCESS_KEY=${secret}'
                 sh 'ls /home/ubuntu/terraform/; terraform plan /home/ubuntu/terraform/'
                 }             
                
