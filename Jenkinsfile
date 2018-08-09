@@ -24,7 +24,7 @@ pipeline {
         }
         stage('terraform init') {
             steps {
-                sh '/home/ubuntu/terraform init'
+                sh 'sudo /home/ubuntu/terraform init'
             }
         }
     }
