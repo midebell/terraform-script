@@ -13,10 +13,10 @@ variable "AMIS" {
 }
 
 variable "PATH_TO_PRIVATE_KEY" {
-  default = "mykey"
+  default = "mykey2"
 }
 variable "PATH_TO_PUBLIC_KEY" {
-  default = "mykey.pub"
+  default = "mykey2.pub"
 }
 variable "INSTANCE_USERNAME" {
   default = "ubuntu"
