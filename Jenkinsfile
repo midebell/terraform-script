@@ -17,6 +17,10 @@ pipeline {
                 sh 'rm -r *;git clone https://github.com/midebell/terraform-script.git'
             }
         }
-        
+        stage('tfsvars create'){
+            steps {
+                sh 'sudo cp /home/ubuntu/terraform/* ./jenkins/'
+            }
+        }
     }
 }
