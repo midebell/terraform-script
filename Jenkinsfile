@@ -19,6 +19,8 @@ pipeline {
         }
         stage('tfsvars create'){
             steps {
+                sh 'chmod -R 777 script2.sh script3.sh'
+                sh 'sudo chown -R jenkins script2.sh script3.sh'
                 sh 'cp /var/lib/jenkins/workspace/Terraform-aws/terraform-script/* /home/ubuntu/terraform/'
             }
         }
