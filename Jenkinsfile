@@ -19,7 +19,7 @@ pipeline {
         }
         stage('tfsvars create'){
             steps {
-                sh ' sudo cp /home/ubuntu/terraform/* /var/lib/jenkins/workspace/Terraform-aws/terraform-script/'
+                sh 'cp /home/ubuntu/terraform/* /var/lib/jenkins/workspace/Terraform-aws/terraform-script/'
             }
         }
         stage('terraform init') {
