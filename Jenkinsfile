@@ -32,7 +32,7 @@ pipeline {
             steps {
                    
                        sh 'cd /home/ubuntu/terraform/'
-                       sh 'terraform plan access_key="${AWS_ACCESS_KEY}" -var secret_key="${AWS_SECRET_KEY}"'
+                       sh 'terraform plan access_key="${var.AWS_ACCESS_KEY}" -var secret_key="${var.AWS_SECRET_KEY}"'
      
             }
         }
