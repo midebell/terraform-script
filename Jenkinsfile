@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh 'cp /var/lib/jenkins/workspace/Terraform-aws/terraform-script/* /home/ubuntu/terraform/'
                 sh 'cd /home/ubuntu/terraform/'
-                sh 'sudo chown -R jenkins script2.sh script3.sh'
+                sh 'chown -R jenkins script2.sh script3.sh'
                 sh 'chmod -R 777 script2.sh script3.sh'
             }
         }
