@@ -36,6 +36,7 @@ pipeline {
                    sh "echo this is ${env.AWS_ACCESS_KEY_ID}"
                    sh "echo this is ${env.AWS_SECRET_ACCESS_KEY}"
                    sh 'terraform plan -var access_key="${AWS_ACCESS_KEY_ID}" -var secret_key="${AWS_SECRET_ACCESS_KEY}"'
+                   sh 'sleep 1m'
                  }
             }
         }
