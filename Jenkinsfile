@@ -57,10 +57,12 @@ pipeline {
         stage("foo") {
             steps {
                 script {
-                    env.RELEASE_SCOPE = input message: 'User input required', ok: 'Release!',
-                            parameters: [choice(name: 'RELEASE_SCOPE', choices: 'patch\nminor\nmajor', description: 'What is the release scope?')]
+                    env.RELEASE_SCOPE = input message: 'User input required', ok: 'Destroy!',
+                            parameters: [choice(name: 'RELEASE_SCOPE', choices: 'keep\ndestroy', description: 'Do you want to keep or destroy?')]
                 }
-                echo "${env.RELEASE_SCOPE}"
+               
+                
+                //echo "${env.RELEASE_SCOPE}"
             }
         }
     
