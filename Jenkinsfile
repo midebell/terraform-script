@@ -14,7 +14,7 @@ pipeline {
         }
         stage('git clone') {
             steps {
-                sh 'sudo rm -r *;git clone https://github.com/midebell/terraform-script.git'
+                sh 'rm -r *;git clone https://github.com/midebell/terraform-script.git'
             }
         }
         stage('tfsvars create'){
@@ -29,7 +29,7 @@ pipeline {
         }
         stage('terraform plan') {
             steps {
-                sh 'ls /var/lib/jenkins/workspace/Terraform-aws/terraform-script; terraform plan /var/lib/jenkins/workspace/Terraform-aws/terraform-script/'
+                sh 'terraform plan /var/lib/jenkins/workspace/Terraform-aws/terraform-script/'
             }
         }
     }
