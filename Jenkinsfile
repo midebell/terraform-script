@@ -53,11 +53,6 @@ pipeline {
                      }
             } 
         }
-        stage('wait') {
-        timeout(time:5, unit:'DAYS') {
-            input message:'Approve deployment?'
-        }
-    }
-    // add deployment stages
+
     }
 }
