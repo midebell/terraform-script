@@ -59,6 +59,5 @@ pipeline {
         }
     }
     // add deployment stages
-}
     }
 }
