@@ -7,7 +7,7 @@ pipeline {
 
     stages {
 
-        stage('terraform started') {
+        stage('terraform started ok') {
             steps {
                 sh 'echo "Started...!" '
             }
