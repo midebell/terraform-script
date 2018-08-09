@@ -7,7 +7,7 @@ resource "aws_key_pair" "mykey2" {
 resource "aws_instance" "web" {
   ami = "${lookup(var.AMIS, var.AWS_REGION)}"
   instance_type = "t2.micro"
-  count = 1
+  count = 0
   key_name = "${aws_key_pair.mykey2.key_name}"
 
   tags {
