@@ -22,5 +22,10 @@ pipeline {
                 sh 'cd /home/ubuntu/terraform/'
             }
         }
+        stage('terraform init') {
+            steps {
+                sh '/home/ubuntu/terraform init'
+            }
+        }
     }
 }
