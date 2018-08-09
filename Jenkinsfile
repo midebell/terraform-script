@@ -30,7 +30,7 @@ pipeline {
         
         stage('terraform login') {
             steps {
-                sh 'terraform plan /home/ubuntu/terraform/ -var-file="terraform.tfvars'
+                sh 'terraform plan /home/ubuntu/terraform/ -var-file="terraform.tfvars"'
             }
         }
         
