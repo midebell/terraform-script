@@ -33,8 +33,9 @@ pipeline {
                  withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'AWS_ACCESS_KEY ')]) {
     // some block
                 }
-                        withCredentials([string(credentialsId: 'AWS_SECRET_KEY', variable: 'AWS_SECRET_KEY')]) {
+                 withCredentials([string(credentialsId: 'AWS_SECRET_KEY', variable: 'AWS_SECRET_KEY')]) {
     // some block
+                 sh 'ls /home/ubuntu/terraform/; terraform plan /home/ubuntu/terraform/'
                 }
             }
         }
