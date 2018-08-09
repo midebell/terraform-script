@@ -30,8 +30,11 @@ pipeline {
         
         stage('terraform plan') {
             steps {
-
+                withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'access'), string(credentialsId: 'AWS_SECRET_KEY', variable: 'secret')]) {
+    // some block
                 sh 'ls /home/ubuntu/terraform/; terraform plan /home/ubuntu/terraform/'
+                }             
+               
             }
         }
     }
