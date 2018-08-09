@@ -30,7 +30,8 @@ pipeline {
         
         stage('terraform login') {
             steps {
-                sh 'terraform plan -var-file="terraform.tfvars" /home/ubuntu/terraform/'
+                
+                sh 'terraform plan -var access_key="${var.AWS_ACCESS_KEY}" -var secret_key="${var.AWS_SECRET_KEY} /home/ubuntu/terraform/"
             }
         }
         
