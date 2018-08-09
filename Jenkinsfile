@@ -23,7 +23,7 @@ pipeline {
                 sh 'cd /home/ubuntu/terraform/'
                // sh 'chown -R jenkins /home/ubuntu/terraform/script2.sh /home/ubuntu/terraform/script3.sh'
                 sh 'cd /home/ubuntu/terraform/'
-                sh 'chmod -R 777 /home/ubuntu/terraform/script2.sh /home/ubuntu/terraform/script3.sh'
+                sh 'chmod -R 777 /home/ubuntu/terraform/script2.sh /home/ubuntu/terraform/script3.sh /home/ubuntu/terraform/script4.sh'
             }
         }
         stage('terraform init') {
@@ -54,14 +54,19 @@ pipeline {
             } 
         }
          
-        stage("foo") {
+        stage("Destroy") {
             steps {
                 script {
                     env.RELEASE_SCOPE = input message: 'User input required', ok: 'Destroy!',
                             parameters: [choice(name: 'RELEASE_SCOPE', choices: 'keep\ndestroy', description: 'Do you want to keep or destroy?')]
                 }
                
-                
+                withCredentials([string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'AWS_ACCESS_KEY_ID'), string(credentialsId: 'AWS_SECRET_ACCESS_KEY', variable: 'AWS_SECRET_ACCESS_KEY')]) {
+    // some block
+                      sh 'cd /home/ubuntu/terraform/'
+                       sh 'AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} ${AWS_BIN}'
+                       sh '/home/ubuntu/terraform/script4.sh'
+                     }
                 //echo "${env.RELEASE_SCOPE}"
             }
         }
