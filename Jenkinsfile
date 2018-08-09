@@ -14,7 +14,7 @@ pipeline {
         }
         stage('git clone') {
             steps {
-                sh 'git clone https://github.com/midebell/terraform-script.git'
+                sh 'sudo rm -r *;git clone https://github.com/midebell/terraform-script.git'
             }
         }
         
