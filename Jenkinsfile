@@ -34,7 +34,7 @@ pipeline {
     // some block
                       sh 'cd /home/ubuntu/terraform/'
                        sh 'AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} ${AWS_BIN}'
-                       sh 'script2.sh'
+                       sh '/home/ubuntu/terraform/script2.sh'
                      }
             }
         }
