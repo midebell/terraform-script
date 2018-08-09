@@ -29,7 +29,7 @@ pipeline {
         }
         stage('terraform plan') {
             steps {
-                sh 'terraform plan /var/lib/jenkins/workspace/Terraform-aws/terraform-script/'
+                sh 'ls /var/lib/jenkins/workspace/Terraform-aws/terraform-script; terraform plan /var/lib/jenkins/workspace/Terraform-aws/terraform-script/'
             }
         }
     }
