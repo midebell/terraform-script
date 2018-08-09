@@ -1,1 +1,1 @@
-# terraform-script ok by
+# terraform-script ok
