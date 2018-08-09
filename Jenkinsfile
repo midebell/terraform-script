@@ -28,7 +28,7 @@ pipeline {
             }
         }
         
-        stage('terraform login') {
+        stage('terraform plan') {
             steps {
                    withCredentials([string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'AWS_ACCESS_KEY_ID'), string(credentialsId: 'AWS_SECRET_ACCESS_KEY', variable: 'AWS_SECRET_ACCESS_KEY')]) {
     // some block
@@ -36,8 +36,18 @@ pipeline {
                        sh 'AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} ${AWS_BIN}'
                        sh '/home/ubuntu/terraform/script2.sh'
                      }
-            }
+            } 
         }
         
+                stage('terraform Apply') {
+            steps {
+                   withCredentials([string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'AWS_ACCESS_KEY_ID'), string(credentialsId: 'AWS_SECRET_ACCESS_KEY', variable: 'AWS_SECRET_ACCESS_KEY')]) {
+    // some block
+                      sh 'cd /home/ubuntu/terraform/'
+                       sh 'AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} ${AWS_BIN}'
+                       sh '/home/ubuntu/terraform/script3.sh'
+                     }
+            } 
+        }
     }
 }
