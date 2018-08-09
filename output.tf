@@ -1,3 +1,3 @@
-output "instance" {
-  value = "${aws_instance.example.public_ip}"
+output "web" {
+  value = "${aws_instance.web.*.private_ip}"
 }
