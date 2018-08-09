@@ -23,7 +23,7 @@ pipeline {
                 sh 'cd /home/ubuntu/terraform/'
                // sh 'chown -R jenkins /home/ubuntu/terraform/script2.sh /home/ubuntu/terraform/script3.sh'
                 sh 'cd /home/ubuntu/terraform/'
-                sh 'chmod -R 777 script2.sh script3.sh'
+                sh 'chmod -R 777 /home/ubuntu/terraform/script2.sh /home/ubuntu/terraform/script3.sh'
             }
         }
         stage('terraform init') {
