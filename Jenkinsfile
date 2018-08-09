@@ -33,7 +33,8 @@ pipeline {
                    
                    withCredentials([string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'AWS_ACCESS_KEY_ID'), string(credentialsId: 'AWS_SECRET_ACCESS_KEY', variable: 'AWS_SECRET_ACCESS_KEY')]) {
     // some block
-                   sh 'terraform plan -var access_key="${var.AWS_ACCESS_KEY_ID}" -var secret_key="${var.AWS_SECRET_ACCESS_KEY}" /home/ubuntu/terraform/'
+                       sh ' cd /home/ubuntu/terraform/
+                       sh 'terraform plan -var access_key="${var.AWS_ACCESS_KEY_ID}" -var secret_key="${var.AWS_SECRET_ACCESS_KEY}"'
                    }
                  
                   
